@@ -5,8 +5,6 @@ import { keyframes } from "styled-components"
 import styled from "styled-components"
 import Fade from "react-reveal/Fade"
 
-// STYLES
-import {Button} from '../components/Button'
 
 // VECTORS
 import one from "../vectors/before/stretch-one.svg"

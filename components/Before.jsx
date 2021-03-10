@@ -1,27 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-// Create an array of object with all the stretch details
-// iterate over that array and run a function for each object
+import { beforeRunStretches } from './beforeRunStretches';
+import { Container, ImageWrapper } from '../styles/layout';
 
-const stretches = [
-  {
-    duration: 10,
-    instructions: 'lean against the wall',
-  },
-  {
-    duration: 10,
-    instructions: 'Other leg',
-  },
-  {
-    duration: 10,
-    instructions: 'Lean on table',
-  },
-];
+function loopDone() {
+  console.log('The loop is done!');
+}
 
-const beginStretches = stretches.map(stretch => <h1>{stretch.instructions}</h1>)
+// setTimeout(function(){ alert("Hello"); }, 3000);
 
 const Before = () => {
-  return <div>{beginStretches}</div>;
+  const [instructions, setInstructions] = useState('');
+  const [image, setImage] = useState({});
+  const [color, setColor] = useState('');
+  const beginStretches = () => {
+    beforeRunStretches.map((stretch, i) => {
+      setTimeout(() => {
+        setInstructions(stretch.instructions);
+        setImage(stretch.image);
+        setColor(stretch.color);
+      }, stretch.duration * 1000);
+    });
+  };
+  return (
+    <Container style={{ background: color }}>
+      <button onClick={beginStretches}>Start</button>
+      {instructions}
+      <ImageWrapper>{image}</ImageWrapper>
+    </Container>
+  );
 };
 
 export default Before;
