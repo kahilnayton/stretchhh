@@ -25,7 +25,7 @@ export const beforeRunStretches = [
     color: "#eb2b2e"
   },
   {
-    duration: 1,
+    duration: 5,
     instructions: 'Lean against table - right leg',
     image: Two,
     color: "#ee6930"
@@ -49,93 +49,94 @@ export const beforeRunStretches = [
     color: "#f29532"
   },
   {
-    duration: 4,
+    duration: 1,
     instructions: 'Straight leg up on table - right one',
     image: Four,
     color: "#f8bf31"
   },
   {
-    duration: 4,
+    duration: 1,
     instructions: 'Straight leg up on table - left one',
     image: Four,
     color: "#f8bf31"
   },
   {
-    duration: 5,
+    duration: 1,
     instructions: 'Now bend over to the side - right one',
     image: Five,
     color: "#faeb2b"
   },
   {
-    duration: 5,
+    duration: 1,
     instructions: 'Now bend over to the side - left one',
     image: Five,
     color: "#faeb2b"
   },
   {
-    duration: 6,
+    duration: 1,
     instructions: 'Pull that fella up from behind your back - right side',
     image: Six,
     color: "#93c14b"
   },
   {
-    duration: 6,
+    duration: 1,
     instructions: 'Pull that fella up from behind your back - left side',
     image: Six,
     color: "#93c14b"
   },
   {
-    duration: 7,
+    duration: 1,
     instructions: 'Time for a squat',
     image: Seven,
     color: "#00a056"
   },
   {
-    duration: 2,
+    duration: 1,
     instructions: 'Sit down and pull your legs in towards yourself',
     image: Eight,
     color: "#05a49d"
   },
   {
-    duration: 3,
+    duration: 1,
     instructions: 'Still sitting give yourself a good twist - right side',
     image: Nine,
     color: "#02a6e3"
   },
   {
-    duration: 3,
+    duration: 1,
     instructions: 'Still sitting give yourself a good twist - left side',
     image: Nine,
     color: "#02a6e3"
   },
   {
-    duration: 3,
+    duration: 1,
     instructions: 'Big step forward and stretch out that inside now - right side',
     image: Ten,
     color: "#136fb6"
   },
   {
-    duration: 3,
+    duration: 1,
     instructions: 'Big step forward and stretch out that inside now - left side',
     image: Ten,
     color: "#136fb6"
   },
   {
-    duration: 3,
+    duration: 1,
     instructions: 'Pull your arm around the back of your neck - right side',
     image: Eleven,
     color: "#572d91"
   },
   {
-    duration: 3,
+    duration: 1,
     instructions: 'Pull your arm around the back of your neck - left side',
     image: Eleven,
     color: "#572d91"
   },
   {
-    duration: 3,
+    duration: 1,
     instructions: 'Now your body wants to go through a door frame but your arms wont let it - silly arms',
     image: Twelve,
     color: "#a12e65"
   },
 ];
+

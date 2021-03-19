@@ -15,18 +15,21 @@ const Before = () => {
   const [color, setColor] = useState('');
   const beginStretches = () => {
     beforeRunStretches.map((stretch, i) => {
-      setTimeout(() => {
-        setInstructions(stretch.instructions);
-        setImage(stretch.image);
-        setColor(stretch.color);
-      }, stretch.duration * 1000);
+      let j = stretch.duration
+      let timerId = setTimeout(function tick() {
+        // setInstructions(stretch.instructions);
+        // setImage(stretch.image);
+        // setColor(stretch.color);
+        timerId = setTimeout(tick, j)
+        console.log(stretch)
+      }, i * 1000);
     });
   };
   return (
     <Container style={{ background: color }}>
       <button onClick={beginStretches}>Start</button>
       {instructions}
-      <ImageWrapper>{image}</ImageWrapper>
+      {/* <ImageWrapper>{image}</ImageWrapper> */}
     </Container>
   );
 };
