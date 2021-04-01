@@ -10,6 +10,10 @@ export const Container = styled.div`
 
 export const ImageWrapper = styled.div`
   svg {
-    fill: #fff;
+    stroke: black;
   }
+`;
+
+export const Button = styled.button`
+  cursor: pointer;
 `;
