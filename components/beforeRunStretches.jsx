@@ -1,15 +1,3 @@
-// import One from '../vectors/before/stretch-one.svg';
-// import Two from '../vectors/before/stretch-two.svg';
-// import Three from '../vectors/before/stretch-three.svg';
-// import Four from '../vectors/before/stretch-four.svg';
-// import Five from '../vectors/before/stretch-five.svg';
-// import Six from '../vectors/before/stretch-six.svg';
-// import Seven from '../vectors/before/stretch-seven.svg';
-// import Eight from '../vectors/before/stretch-eight.svg';
-// import Nine from '../vectors/before/stretch-nine.svg';
-// import Ten from '../vectors/before/stretch-ten.svg';
-// import Eleven from '../vectors/before/stretch-eleven.svg';
-// import Twelve from '../vectors/before/stretch-12.svg';
 
 import {
   stretchOne,
@@ -24,136 +12,136 @@ import {
   stretchTen,
   stretchEleven,
   stretchTwelve,
-} from './beforeVectors';
+} from './stretchVectors';
 
 export const beforeRunStretches = [
   {
-    duration: 3,
+    duration: 30,
     instructions: 'lean against the wall - right leg',
     image: stretchOne,
-    color: '#eb2b2e',
+    color: 'rgba(235, 43, 46, 0.527)',
   },
   {
-    duration: 3,
+    duration: 30,
     instructions: 'lean against the wall - left leg',
     image: stretchOne,
-    color: '#eb2b2e',
+    color: 'rgba(235, 43, 46, 0.527)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions: 'Lean against table - right leg',
     image: stretchTwo,
-    color: '#ee6930',
+    color: 'rgba(238, 105, 48, 0.575)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions: 'Lean against table - left leg',
     image: stretchTwo,
-    color: '#ee6930',
+    color: 'rgba(238, 105, 48, 0.575)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions: 'Foot up on the table - right leg',
     image: stretchThree,
-    color: '#f29532',
+    color: 'rgba(242, 149, 50, 0.575)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions: 'Foot up on the table - left leg',
     image: stretchThree,
-    color: '#f29532',
+    color: 'rgba(242, 149, 50, 0.562)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions: 'Straight leg up on table - right one',
     image: stretchFour,
-    color: '#f8bf31',
+    color: 'rgba(248, 192, 49, 0.514)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions: 'Straight leg up on table - left one',
     image: stretchFour,
-    color: '#f8bf31',
+    color: 'rgba(248, 192, 49, 0.603)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions: 'Now bend over to the side - right one',
     image: stretchFive,
-    color: '#faeb2b',
+    color: 'rgba(250, 236, 43, 0.514)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions: 'Now bend over to the side - left one',
     image: stretchFive,
-    color: '#faeb2b',
+    color: 'rgba(250, 236, 43, 0.562)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions: 'Pull that fella up from behind your back - right side',
     image: stretchSix,
-    color: '#93c14b',
+    color: 'rgba(148, 193, 75, 0.582)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions: 'Pull that fella up from behind your back - left side',
     image: stretchSix,
-    color: '#93c14b',
+    color: 'rgba(148, 193, 75, 0.596)',
   },
   {
-    duration: 3,
+    duration: 30,
     instructions: 'Time for a squat',
     image: stretchSeven,
-    color: '#00a056',
+    color: 'rgba(0, 160, 85, 0.582)',
   },
   {
-    duration: 3,
+    duration: 30,
     instructions: 'Sit down and pull your legs in towards yourself',
     image: stretchEight,
-    color: '#05a49d',
+    color: 'rgba(5, 164, 156, 0.575)',
   },
   {
-    duration: 1,
+    duration: 15,
     instructions: 'Still sitting give yourself a good twist - right side',
     image: stretchNine,
-    color: '#02a6e3',
+    color: 'rgba(2, 167, 227, 0.521)',
   },
   {
-    duration: 1,
+    duration: 15,
     instructions: 'Still sitting give yourself a good twist - left side',
     image: stretchNine,
-    color: '#02a6e3',
+    color: 'rgba(2, 167, 227, 0.575)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions:
       'Big step forward and stretch out that inside now - right side',
     image: stretchTen,
-    color: '#136fb6',
+    color: 'rgba(19, 111, 182, 0.568)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions:
       'Big step forward and stretch out that inside now - left side',
     image: stretchTen,
-    color: '#136fb6',
+    color: 'rgba(19, 111, 182, 0.575)',
   },
   {
-    duration: 1,
+    duration: 15,
     instructions: 'Pull your arm around the back of your neck - right side',
     image: stretchEleven,
-    color: '#572d91',
+    color: 'rgba(87, 45, 145, 0.541)',
   },
   {
-    duration: 1,
+    duration: 15,
     instructions: 'Pull your arm around the back of your neck - left side',
     image: stretchEleven,
-    color: '#572d91',
+    color: 'rgba(87, 45, 145, 0.555)',
   },
   {
-    duration: 2,
+    duration: 20,
     instructions:
       'Now your body wants to go through a door frame but your arms wont let it - silly arms',
     image: stretchTwelve,
-    color: '#a12e65',
+    color: 'rgba(161, 46, 102, 0.473)',
   },
 ];
