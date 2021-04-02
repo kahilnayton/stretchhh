@@ -21,11 +21,11 @@ const Before = () => {
 
   const beginStretches = async (index, time, sequence) => {
     setStretching(true);
-    setInstructions(sequence[index].instructions);
-    setColor(sequence[index].color);
-    setImage(sequence[index].image);
     let timerId = updateTime(time)
-    if (sequence.length > index + 1) {
+    if (sequence.length > index) {
+      setInstructions(sequence[index].instructions);
+      setImage(sequence[index].image);
+      setColor(sequence[index].color);
       const result = await setTimeout(stretchMe, time * 1000);
 
       function stretchMe() {

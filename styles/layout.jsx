@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   background: #aae0ff;
+  transition: all 0.2s;
 `;
 
 export const ImageWrapper = styled.div`
@@ -28,7 +29,7 @@ export const Button = styled.button`
   width: 100px;
   border-radius: 50px;
   background: #fff;
-  transition: 0.2s;
+  transition: 0.4s;
   border: none;
 
   &:hover {
