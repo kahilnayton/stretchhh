@@ -13,8 +13,8 @@ import {
   Count
 } from '../styles/layout';
 
-import chime from '../public/Chimes.wav';
-import reggae from '../public/Reggae.mp3';
+// import chime from '../public/Chimes.wav';
+import completeSound from '../public/sound.mp3';
 
 export default function Stretch({ selectedStretch, setSelectedStretch }) {
   const [instructions, setInstructions] = useState('');
@@ -118,7 +118,7 @@ export default function Stretch({ selectedStretch, setSelectedStretch }) {
           </Button>
         </StretchWrapper>
       )}
-      <audio id="chime" ref={myAudio} src={reggae} type="audio" />
+      <audio id="chime" ref={myAudio} src={completeSound} type="audio" />
      
     </Container>
   );
