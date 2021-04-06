@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Fade from 'react-reveal/Fade';
+import useSound from 'use-sound';
 
 import { beforeRunStretches } from './beforeRunStretches';
 import { afterRunStretches } from './afterRunStretches';
@@ -9,49 +10,74 @@ import {
   Button,
   StretchWrapper,
   ButtonContainer,
+  Count
 } from '../styles/layout';
 
-const Before = () => {
+import chime from '../public/Chimes.wav';
+import reggae from '../public/Reggae.mp3';
+
+export default function Stretch({ selectedStretch, setSelectedStretch }) {
   const [instructions, setInstructions] = useState('');
   const [image, setImage] = useState(null);
   const [color, setColor] = useState('');
   const [stretching, setStretching] = useState(false);
   const [clock, setClock] = useState(0);
-  const [keepGoing, setKeepGoing] = useState(true);
-  // const [stopStretching, setStopStretching] = useState(false);
+  const [currentStretchIndex, setCurrentStretchIndex] = useState(0);
+  const [currentStretch, setCurrentStretch] = useState(null);
+  const [buttonText, setButtonText] = useState('');
+  const [playing, setPlaying] = useState(false);
+  const [buttonState, setButtonState] = useState(false);
 
-  const beginStretches = async (index, time, sequence) => {
+  const myAudio = useRef();
+
+  useEffect(() => {
+      setCurrentStretch(selectedStretch);
+      setImage(selectedStretch[0]?.image);
+      setInstructions('Get ready!');
+      setButtonText('Go!');
+  }, [selectedStretch]);
+
+  const beginStretches = (index, time, sequence) => {
     setInstructions('Get Ready!');
     setStretching(true);
-
-    if (sequence.length > index) {
-      setInstructions(sequence[index].instructions);
-      setColor(sequence[index].color);
-      setImage(sequence[index].image);
-      let timerId = updateTime(time);
-      const result = await setTimeout(stretchMe, time * 1000);
-
-      function stretchMe() {
-        setInstructions(sequence[index].instructions);
-        setImage(sequence[index].image);
-        beginStretches(index + 1, sequence[index].duration, sequence);
-        // console.log(sequence[index].instructions);
-      }
-    } else {
-      setStretching(false);
-      setColor('');
-      setImage('');
-      setInstructions(
-        'Good job you got through them all, now all you have to do is jog 😭😭😭'
-      );
+    setButtonText('');
+    setButtonState(true);
+    
+    if (myAudio.current !== null) {
+      myAudio.current.pause();
+      myAudio.current.currentTime = 0.0;
     }
+    
+    setInstructions(sequence[index].instructions);
+    setColor(sequence[index].color);
+    setImage(sequence[index].image);
+    
+    let timerId = updateTime(time);
+    
+    function timeout(ms) {
+      return new Promise((res) => setTimeout(res, ms));
+    }
+    
+    async function fireEvents() {
+      await timeout(time * 1000);
+      console.log('done');
+      if (myAudio.current !== null) {
+        myAudio.current.play();
+      }
+      setButtonState(false);
+      setButtonText('Next');
+      setCurrentStretchIndex(index + 1);
+      setStretching(false);
+    }
+
+    fireEvents();
   };
 
   var clockTime;
 
   const updateTime = (time) => {
     console.log(time);
-    for (let i = 0; i < time; i++) {
+    for (let i = 0; i < time + 1; i++) {
       clockTime = setTimeout(() => {
         console.log(time - i);
         setClock(time - i);
@@ -68,49 +94,32 @@ const Before = () => {
 
   return (
     <Container style={{ background: color }}>
-      {stretching ? (
+      {selectedStretch && (
         <StretchWrapper>
-          <h1>{clock}</h1>
+          <Count>{clock}</Count>
           <Fade top>
             <ImageWrapper>{image}</ImageWrapper>
           </Fade>
           <Fade bottom>
             <p>{instructions}</p>
           </Fade>
-          {/* <Button className="stop" onClick={myStopFunction}>
-            Stop
-          </Button> */}
+          <Button
+            className={`${stretching ? 'stop' : 'start'}`}
+            disabled={buttonState}
+            onClick={() =>
+              beginStretches(
+                currentStretchIndex,
+                selectedStretch[currentStretchIndex].duration,
+                selectedStretch
+              )
+            }
+          >
+            <p>{buttonText}</p>
+          </Button>
         </StretchWrapper>
-      ) : (
-        <ButtonContainer>
-          <Button
-            className="before"
-            onClick={() =>
-              beginStretches(
-                0,
-                beforeRunStretches[0].duration,
-                beforeRunStretches
-              )
-            }
-          >
-            Before Run
-          </Button>
-          <Button
-            className="after"
-            onClick={() =>
-              beginStretches(
-                0,
-                afterRunStretches[0].duration,
-                afterRunStretches
-              )
-            }
-          >
-            After Run
-          </Button>
-        </ButtonContainer>
       )}
+      <audio id="chime" ref={myAudio} src={reggae} type="audio" />
+     
     </Container>
   );
-};
-
-export default Before;
+}

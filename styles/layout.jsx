@@ -32,6 +32,11 @@ export const Button = styled.button`
   transition: 0.4s;
   border: none;
 
+  &:focus {
+    outline: none;
+    border: none;
+  }
+
   &:hover {
     color: #fff;
     transition: 0.2s;
@@ -49,6 +54,27 @@ export const Button = styled.button`
       background: #ff8741;
     }
   }
+  &.start {
+    background: rgba(255, 135, 65, 0.466);
+    &:hover {
+      background: #ff8741;
+    }
+  }
+  &.stop {
+    background: rgba(78, 201, 78, 0.308);
+    &:hover {
+      background: #4ec94e;
+    }
+  }
+  &.change {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(78, 84, 201, 0.308);
+    &:hover {
+      background: #4e58c9;
+    }
+  }
 `;
 
 export const StretchWrapper = styled.div`
@@ -56,16 +82,19 @@ export const StretchWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  h1 {
-    color: #fff;
-    font-size: 8rem;
-    margin: 0;
-  }
-
   p {
     padding: 10px 20px;
     margin: auto;
     text-align: center;
     font-size: 1.6rem;
   }
+`;
+
+export const Count = styled.h1`
+  color: #fff;
+  margin: 0;
+  font-size: 36px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 `;
