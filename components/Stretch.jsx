@@ -13,8 +13,8 @@ import {
   Count
 } from '../styles/layout';
 
-// import chime from '../public/Chimes.wav';
 import completeSound from '../public/sound.mp3';
+import stretchingMusic from '../public/music.mp3';
 
 export default function Stretch({ selectedStretch, setSelectedStretch }) {
   const [instructions, setInstructions] = useState('');
@@ -29,6 +29,7 @@ export default function Stretch({ selectedStretch, setSelectedStretch }) {
   const [buttonState, setButtonState] = useState(false);
 
   const myAudio = useRef();
+  const mySong = useRef();
 
   useEffect(() => {
       setCurrentStretch(selectedStretch);
@@ -47,6 +48,10 @@ export default function Stretch({ selectedStretch, setSelectedStretch }) {
       myAudio.current.pause();
       myAudio.current.currentTime = 0.0;
     }
+
+    if (mySong.current !== null) {
+      mySong.current.play();
+    }
     
     setInstructions(sequence[index].instructions);
     setColor(sequence[index].color);
@@ -63,6 +68,10 @@ export default function Stretch({ selectedStretch, setSelectedStretch }) {
       console.log('done');
       if (myAudio.current !== null) {
         myAudio.current.play();
+      }
+      if (mySong.current !== null) {
+        mySong.current.pause();
+        mySong.current.currentTime = 0.0;
       }
       setButtonState(false);
       setButtonText('Next');
@@ -119,6 +128,7 @@ export default function Stretch({ selectedStretch, setSelectedStretch }) {
         </StretchWrapper>
       )}
       <audio id="chime" ref={myAudio} src={completeSound} type="audio" />
+      <audio id="music" ref={mySong} src={stretchingMusic} type="audio" />
      
     </Container>
   );
